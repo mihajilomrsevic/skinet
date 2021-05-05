@@ -5,8 +5,10 @@
 //-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Infrastructure.Data
 {
+    using System.Reflection;
+    using global::SkiNet.WebAPI.Core.Models;
     using Microsoft.EntityFrameworkCore;
-    using SkiNet.WebAPI.Core.Models;
+
 
     /// <summary>
     /// StoreContext class for manipulating database.
@@ -29,5 +31,27 @@ namespace SkiNet.WebAPI.Infrastructure.Data
         /// The products.
         /// </value>
         public DbSet<Product> Products { get; set; }
+
+        /// <summary>
+        /// Gets or sets the product brands.
+        /// </summary>
+        /// <value>
+        /// The product brands.
+        /// </value>
+        public DbSet<ProductBrand> ProductBrands { get; set; }
+
+        /// <summary>
+        /// Gets or sets the product types.
+        /// </summary>
+        /// <value>
+        /// The product types.
+        /// </value>
+        public DbSet<ProductType> ProductTypes { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
     }
 }

@@ -5,8 +5,14 @@
 //-------------------------------------------------------------------------------
 namespace SkiNet
 {
+    using System;
+    using System.Threading.Tasks;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
+    using SkiNet.WebAPI.Infrastructure.Data;
 
     /// <summary>
     /// Program class.
@@ -17,9 +23,26 @@ namespace SkiNet
         /// Defines the entry point of the application.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            using var scope = host.Services.CreateScope();
+
+            var servicess = scope.ServiceProvider;
+            var loggerFactory = servicess.GetRequiredService<ILoggerFactory>();
+            try
+            {
+                var context = servicess.GetRequiredService<StoreContext>();
+                await context.Database.MigrateAsync();
+                await StoreContextSeed.SeedAsync(context, loggerFactory);
+            }
+            catch (Exception ex)
+            {
+                var logger = loggerFactory.CreateLogger<Program>();
+                logger.LogError(ex, "An error occured during migration!");
+            }
+
+            host.Run();
         }
 
         /// <summary>

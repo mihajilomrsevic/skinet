@@ -12,7 +12,10 @@ namespace SkiNet
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.OpenApi.Models;
+    using SkiNet.WebAPI.Core.Repositories;
+    using SkiNet.WebAPI.Helpers;
     using SkiNet.WebAPI.Infrastructure.Data;
+    using SkiNet.WebAPI.Infrastructure.Repositories;
 
     /// <summary>
     /// Startup class.
@@ -42,12 +45,16 @@ namespace SkiNet
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
+            services.AddDbContext<StoreContext>(x => x.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkiNet", Version = "v1" });
             });
-            services.AddDbContext<StoreContext>(x => x.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+
         }
 
         /// <summary>
@@ -67,6 +74,8 @@ namespace SkiNet
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 

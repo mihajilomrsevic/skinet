@@ -1,15 +1,14 @@
-﻿//-------------------------------------------------------------------------------
-// <copyright file="Product.cs" company="SkiNet">
-//     Copyright (c) All rights reserved.
-// </copyright>
-//-------------------------------------------------------------------------------
-namespace SkiNet.WebAPI.Core.Models
+﻿namespace SkiNet.WebAPI.Core.Models
 {
-    /// <summary>
-    /// Product model.
-    /// </summary>
-    public class Product : BaseEntity
+    public class ProductToReturnDto
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int Id { get; set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -43,12 +42,20 @@ namespace SkiNet.WebAPI.Core.Models
         /// </value>
         public string PictureUrl { get; set; }
 
-        public ProductType ProductType { get; set; }
+        /// <summary>
+        /// Gets or sets the type of the product.
+        /// </summary>
+        /// <value>
+        /// The type of the product.
+        /// </value>
+        public string ProductType { get; set; }
 
-        public int ProductTypeId { get; set; }
-
-        public ProductBrand ProductBrand { get; set; }
-
-        public int ProductBrandId { get; set; }
+        /// <summary>
+        /// Gets or sets the product brand.
+        /// </summary>
+        /// <value>
+        /// The product brand.
+        /// </value>
+        public string ProductBrand { get; set; }
     }
 }

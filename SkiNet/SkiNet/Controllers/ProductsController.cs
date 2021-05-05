@@ -5,9 +5,15 @@
 //-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Controllers
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
+    using SkiNet.WebAPI.Core.Models;
+    using SkiNet.WebAPI.Core.Repositories;
+    using SkiNet.WebAPI.Core.Specifications;
     using SkiNet.WebAPI.Infrastructure.Data;
 
     /// <summary>
@@ -18,18 +24,24 @@ namespace SkiNet.WebAPI.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        /// <summary>
-        /// The context
-        /// </summary>
-        private readonly StoreContext context;
+        private readonly IGenericRepository<ProductType> productTypeRepo;
+        private readonly IGenericRepository<ProductBrand> productBrandRepo;
+        private readonly IGenericRepository<Product> productRepo;
+        private readonly IMapper mapper;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductsController" /> class.
         /// </summary>
         /// <param name="context">The context.</param>
-        public ProductsController(StoreContext context)
+        public ProductsController(IGenericRepository<Product> productsRepo,
+            IGenericRepository<ProductBrand> productBrandRepo,
+            IGenericRepository<ProductType> productyTypeRepo,
+            IMapper mapper)
         {
-            this.context = context;
+            this.productTypeRepo = productyTypeRepo;
+            this.productRepo = productsRepo;
+            this.productBrandRepo = productBrandRepo;
+            this.mapper = mapper;
         }
 
         /// <summary>
@@ -39,9 +51,10 @@ namespace SkiNet.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            var products = await this.context.Products.ToListAsync();
+            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var products = await this.productRepo.ListAsync(spec);
 
-            return this.Ok(products);
+            return this.Ok(this.mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
         }
 
         /// <summary>
@@ -52,9 +65,26 @@ namespace SkiNet.WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
         {
-            var products = await this.context.Products.FindAsync(id);
+            var spec = new ProductsWithTypesAndBrandsSpecification(id);
+            var product = await this.productRepo.GetEntityWithSpec(spec);
 
-            return this.Ok(products);
+            return this.Ok(this.mapper.Map<Product, ProductToReturnDto>(product));
+        }
+
+        [HttpGet("brands")]
+        public async Task<IActionResult> GetBrands()
+        {
+            var brands = await this.productBrandRepo.ListAllAsync();
+
+            return this.Ok();
+        }
+
+        [HttpGet("types")]
+        public async Task<IActionResult> GetProductTypes()
+        {
+            var types = await this.productTypeRepo.ListAllAsync();
+
+            return this.Ok(types);
         }
     }
 }
