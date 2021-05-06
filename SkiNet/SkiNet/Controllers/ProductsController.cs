@@ -16,6 +16,7 @@ namespace SkiNet.WebAPI.Controllers
     using SkiNet.WebAPI.Core.Repositories;
     using SkiNet.WebAPI.Core.Specifications;
     using SkiNet.WebAPI.Errors;
+    using SkiNet.WebAPI.Helpers;
     using SkiNet.WebAPI.Infrastructure.Data;
 
     /// <summary>
@@ -70,12 +71,21 @@ namespace SkiNet.WebAPI.Controllers
         /// </summary>
         /// <returns>Returns list of products.</returns>
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts([FromQuery] ProductSpecParams productParams)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(productParams);
+
+            var countSpecification = new ProductWithFiltersForCountSpecification(productParams);
+
+            var totalItems = await this.productRepo.CountAsync(spec);
+
             var products = await this.productRepo.ListAsync(spec);
 
-            return this.Ok(this.mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+            var data = this.mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+          
+            return this.Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, 
+                productParams.PageSize, 
+                totalItems, data));
         }
 
         /// <summary>

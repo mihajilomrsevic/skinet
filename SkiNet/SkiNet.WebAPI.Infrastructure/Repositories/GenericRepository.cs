@@ -36,6 +36,16 @@ namespace SkiNet.WebAPI.Infrastructure.Repositories
         }
 
         /// <summary>
+        /// Counts the asynchronous.
+        /// </summary>
+        /// <param name="spec">The spec.</param>
+        /// <returns></returns>
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await this.ApplySpecification(spec).CountAsync();
+        }
+
+        /// <summary>
         /// Gets the by identifier asynchronous.
         /// </summary>
         /// <param name="id">The identifier.</param>

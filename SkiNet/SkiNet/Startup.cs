@@ -5,21 +5,15 @@
 //-------------------------------------------------------------------------------
 namespace SkiNet
 {
-    using System.Linq;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using Microsoft.OpenApi.Models;
-    using SkiNet.WebAPI.Core.Repositories;
-    using SkiNet.WebAPI.Errors;
     using SkiNet.WebAPI.Extensions;
     using SkiNet.WebAPI.Helpers;
     using SkiNet.WebAPI.Infrastructure.Data;
-    using SkiNet.WebAPI.Infrastructure.Repositories;
     using SkiNet.WebAPI.Middleware;
 
     /// <summary>
@@ -55,6 +49,13 @@ namespace SkiNet
             services.AddDbContext<StoreContext>(x => x.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200");
+                });
+            });
         }
 
         /// <summary>
@@ -78,6 +79,8 @@ namespace SkiNet
             app.UseRouting();
 
             app.UseStaticFiles();
+
+            app.UseCors("CorsPolicy");
 
             app.UseAuthorization();
 

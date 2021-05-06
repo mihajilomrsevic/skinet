@@ -42,5 +42,12 @@ namespace SkiNet.WebAPI.Core.Repositories
         /// <param name="spec">The spec.</param>
         /// <returns><see cref="IReadOnlyList{T}"/> of specifications.</returns>
         Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
+
+        /// <summary>
+        /// Counts the asynchronous.
+        /// </summary>
+        /// <param name="spec">The spec.</param>
+        /// <returns></returns>
+        Task<int> CountAsync(ISpecification<T> spec);
     }
 }
