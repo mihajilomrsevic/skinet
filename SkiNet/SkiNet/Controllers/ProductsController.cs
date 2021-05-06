@@ -9,11 +9,13 @@ namespace SkiNet.WebAPI.Controllers
     using System.Linq;
     using System.Threading.Tasks;
     using AutoMapper;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using SkiNet.WebAPI.Core.Models;
     using SkiNet.WebAPI.Core.Repositories;
     using SkiNet.WebAPI.Core.Specifications;
+    using SkiNet.WebAPI.Errors;
     using SkiNet.WebAPI.Infrastructure.Data;
 
     /// <summary>
@@ -22,7 +24,7 @@ namespace SkiNet.WebAPI.Controllers
     /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController
     {
         private readonly IGenericRepository<ProductType> productTypeRepo;
         private readonly IGenericRepository<ProductBrand> productBrandRepo;
@@ -63,11 +65,17 @@ namespace SkiNet.WebAPI.Controllers
         /// <param name="id">The identifier.</param>
         /// <returns>Returns a single product.</returns>
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProduct(int id)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
             var product = await this.productRepo.GetEntityWithSpec(spec);
 
+            if (product == null)
+            {
+                return this.NotFound(new ApiResponse(404));
+            }
             return this.Ok(this.mapper.Map<Product, ProductToReturnDto>(product));
         }
 
