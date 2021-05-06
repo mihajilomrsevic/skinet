@@ -1,10 +1,19 @@
-﻿
+﻿//-------------------------------------------------------------------------------
+// <copyright file="BaseSpecification.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Core.Specifications
 {
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
 
+    /// <summary>
+    /// BaseSpecification model.
+    /// </summary>
+    /// <typeparam name="T">Object of choice.</typeparam>
+    /// <seealso cref="SkiNet.WebAPI.Core.Specifications.ISpecification{T}" />
     public class BaseSpecification<T> : ISpecification<T>
     {
         /// <summary>
@@ -45,7 +54,7 @@ namespace SkiNet.WebAPI.Core.Specifications
         /// <param name="includeExpression">The include expression.</param>
         protected void AddInclude(Expression<Func<T, object>> includeExpression)
         {
-            Includes.Add(includeExpression);
+            this.Includes.Add(includeExpression);
         }
     }
 }

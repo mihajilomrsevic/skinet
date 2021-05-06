@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿//-------------------------------------------------------------------------------
+// <copyright file="ApiException.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Errors
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Custom exception class.
+    /// </summary>
+    /// <seealso cref="SkiNet.WebAPI.Errors.ApiResponse" />
     public class ApiException : ApiResponse
     {
         /// <summary>
@@ -13,10 +22,12 @@ namespace SkiNet.WebAPI.Errors
         /// <param name="statusCode">The status code.</param>
         /// <param name="message">The message.</param>
         /// <param name="details">The details.</param>
-        public ApiException(int statusCode, string message = null,
+        public ApiException(
+            int statusCode, 
+            string message = null,
             string details = null) : base(statusCode, message)
         {
-            Details = details;
+            this.Details = details;
         }
 
         /// <summary>

@@ -1,21 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using SkiNet.WebAPI.Core.Repositories;
-using SkiNet.WebAPI.Errors;
-using SkiNet.WebAPI.Infrastructure.Repositories;
-
+﻿//-------------------------------------------------------------------------------
+// <copyright file="ApplicationServicesExtensions.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Extensions
 {
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.DependencyInjection;
+    using SkiNet.WebAPI.Core.Repositories;
+    using SkiNet.WebAPI.Errors;
+    using SkiNet.WebAPI.Infrastructure.Repositories;
+
+    /// <summary>
+    /// Extension class for injecting standard services.
+    /// </summary>
     public static class ApplicationServicesExtensions
     {
+        /// <summary>
+        /// Adds the application services.
+        /// </summary>
+        /// <param name="services">The services.</param>
+        /// <returns><see cref="IServiceCollection"/> </returns>
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = actionContext =>

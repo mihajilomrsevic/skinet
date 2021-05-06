@@ -1,15 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using SkiNet.WebAPI.Errors;
-using SkiNet.WebAPI.Infrastructure.Data;
-
+﻿//-------------------------------------------------------------------------------
+// <copyright file="BuggyController.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
 namespace SkiNet.WebAPI.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using SkiNet.WebAPI.Errors;
+    using SkiNet.WebAPI.Infrastructure.Data;
+
+    /// <summary>
+    /// Controller made for testing purposes.
+    /// </summary>
+    /// <seealso cref="SkiNet.WebAPI.Controllers.BaseApiController" />
     public class BuggyController : BaseApiController
     {
+        /// <summary>
+        /// The context
+        /// </summary>
         private readonly StoreContext context;
 
         /// <summary>
@@ -24,7 +31,7 @@ namespace SkiNet.WebAPI.Controllers
         /// <summary>
         /// Gets the not found request.
         /// </summary>
-        /// <returns></returns>
+        /// <returns><see cref="IActionResult"/> response</returns>
         [HttpGet("notfound")]
         public IActionResult GetNotFoundRequest()
         {
@@ -38,6 +45,10 @@ namespace SkiNet.WebAPI.Controllers
             return this.Ok(thing);
         }
 
+        /// <summary>
+        /// Gets the server error.
+        /// </summary>
+        /// <returns><see cref="IActionResult"/> response</returns>
         [HttpGet("servererror")]
         public IActionResult GetServerError()
         {
@@ -48,12 +59,21 @@ namespace SkiNet.WebAPI.Controllers
             return this.Ok();
         }
 
+        /// <summary>
+        /// Gets the bad request.
+        /// </summary>
+        /// <returns><see cref="IActionResult"/> response.</returns>
         [HttpGet("badrequest")]
         public IActionResult GetBadRequest()
         {
             return this.BadRequest(new ApiResponse(400));
         }
 
+        /// <summary>
+        /// Gets the not found request.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns><see cref="IActionResult"/> response.</returns>
         [HttpGet("badrequest/{id}")]
         public IActionResult GetNotFoundRequest(int id)
         {

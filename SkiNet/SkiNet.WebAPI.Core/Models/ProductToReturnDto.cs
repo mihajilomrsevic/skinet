@@ -1,5 +1,13 @@
-﻿namespace SkiNet.WebAPI.Core.Models
+﻿//-------------------------------------------------------------------------------
+// <copyright file="ProductToReturnDto.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
+namespace SkiNet.WebAPI.Core.Models
 {
+    /// <summary>
+    /// ProductToReturn class to transfer a data between layers.
+    /// </summary>
     public class ProductToReturnDto
     {
         /// <summary>

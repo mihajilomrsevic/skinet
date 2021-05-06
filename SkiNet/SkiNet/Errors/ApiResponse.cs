@@ -34,6 +34,11 @@ namespace SkiNet.WebAPI.Errors
         /// </value>
         public string Message { get; set; }
 
+        /// <summary>
+        /// Gets the default message for status code.
+        /// </summary>
+        /// <param name="statusCode">The status code.</param>
+        /// <returns></returns>
         private string GetDefaultMessageForStatusCode(int statusCode)
         {
             return statusCode switch

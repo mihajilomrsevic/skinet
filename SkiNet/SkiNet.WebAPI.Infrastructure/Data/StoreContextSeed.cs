@@ -1,16 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using SkiNet.WebAPI.Core.Models;
-
+﻿//-------------------------------------------------------------------------------
+// <copyright file="StoreContextSeed.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Infrastructure.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text.Json;
+    using System.Threading.Tasks;
+    using Microsoft.Extensions.Logging;
+    using SkiNet.WebAPI.Core.Models;
+
+    /// <summary>
+    /// StoreContextSeed made for packaging a data to database.
+    /// </summary>
     public class StoreContextSeed
     {
+        /// <summary>
+        /// Seeds the asynchronous.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="loggerFactory">The logger factory.</param>
+        /// <returns>Returns a <see cref="Task"/></returns>
         public static async Task SeedAsync(StoreContext context, ILoggerFactory loggerFactory)
         {
             try

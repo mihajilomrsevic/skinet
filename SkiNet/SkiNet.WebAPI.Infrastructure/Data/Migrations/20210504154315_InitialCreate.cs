@@ -1,9 +1,31 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
+﻿//-------------------------------------------------------------------------------
+// <copyright file="InitialCreate.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Infrastructure.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
+    /// <summary>
+    /// InitialCreate class created by EF migration.
+    /// </summary>
+    /// <seealso cref="Microsoft.EntityFrameworkCore.Migrations.Migration" />
     public partial class InitialCreate : Migration
     {
+        /// <summary>
+        /// <param>
+        /// Builds the operations that will migrate the database 'up'.
+        /// </param>
+        /// <param>
+        /// That is, builds the operations that will take the database from the state left in by the
+        /// previous migration so that it is up-to-date with regard to this migration.
+        /// </param>
+        /// <param>
+        /// This method must be overridden in each class the inherits from <see cref="T:Microsoft.EntityFrameworkCore.Migrations.Migration" />.
+        /// </param>
+        /// </summary>
+        /// <param name="migrationBuilder">The <see cref="T:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" /> that will build the operations.</param>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -73,6 +95,21 @@ namespace SkiNet.WebAPI.Infrastructure.Data.Migrations
                 column: "ProductTypeId");
         }
 
+        /// <summary>
+        /// <param>
+        /// Builds the operations that will migrate the database 'down'.
+        /// </param>
+        /// <param>
+        /// That is, builds the operations that will take the database from the state left in by
+        /// this migration so that it returns to the state that it was in before this migration was applied.
+        /// </param>
+        /// <param>
+        /// This method must be overridden in each class the inherits from <see cref="T:Microsoft.EntityFrameworkCore.Migrations.Migration" /> if
+        /// both 'up' and 'down' migrations are to be supported. If it is not overridden, then calling it
+        /// will throw and it will not be possible to migrate in the 'down' direction.
+        /// </param>
+        /// </summary>
+        /// <param name="migrationBuilder">The <see cref="T:Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder" /> that will build the operations.</param>
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

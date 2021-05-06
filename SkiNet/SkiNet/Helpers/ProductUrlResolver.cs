@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Microsoft.Extensions.Configuration;
-using SkiNet.WebAPI.Core.Models;
-
+﻿//-------------------------------------------------------------------------------
+// <copyright file="ProductUrlResolver.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Helpers
 {
+    using AutoMapper;
+    using Microsoft.Extensions.Configuration;
+    using SkiNet.WebAPI.Core.Models;
+
+    /// <summary>
+    /// ProductUrlResolver class made to create URL for products, actually for pictures.
+    /// </summary>
+    /// <seealso cref="AutoMapper.IValueResolver{SkiNet.WebAPI.Core.Models.Product, SkiNet.WebAPI.Core.Models.ProductToReturnDto, System.String}" />
     public class ProductUrlResolver : IValueResolver<Product, ProductToReturnDto, string>
     {
         /// <summary>
@@ -16,8 +21,9 @@ namespace SkiNet.WebAPI.Helpers
         private readonly IConfiguration config;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProductUrlResolver"/> class.
+        /// Initializes a new instance of the <see cref="ProductUrlResolver" /> class.
         /// </summary>
+        /// <param name="config">The configuration.</param>
         public ProductUrlResolver(IConfiguration config)
         {
             this.config = config;

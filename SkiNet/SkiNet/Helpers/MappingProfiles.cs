@@ -1,10 +1,21 @@
-﻿
+﻿//-------------------------------------------------------------------------------
+// <copyright file="MappingProfiles.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
 namespace SkiNet.WebAPI.Helpers
 {
     using AutoMapper;
 
+    /// <summary>
+    /// Defines a mapper profiles.
+    /// </summary>
+    /// <seealso cref="AutoMapper.Profile" />
     public class MappingProfiles : Profile
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MappingProfiles"/> class.
+        /// </summary>
         public MappingProfiles()
         {
             this.CreateMap<Core.Models.Product, Core.Models.ProductToReturnDto>()

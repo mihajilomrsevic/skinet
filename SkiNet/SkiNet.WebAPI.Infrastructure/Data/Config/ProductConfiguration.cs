@@ -1,9 +1,18 @@
-﻿namespace SkiNet.WebAPI.Infrastructure.Data.Config
+﻿//-------------------------------------------------------------------------------
+// <copyright file="ProductConfiguration.cs" company="SkiNet">
+//     Copyright (c) All rights reserved.
+// </copyright>
+//-------------------------------------------------------------------------------
+namespace SkiNet.WebAPI.Infrastructure.Data.Config
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
     using SkiNet.WebAPI.Core.Models;
 
+    /// <summary>
+    /// ProductConfiguration model.
+    /// </summary>
+    /// <seealso cref="Microsoft.EntityFrameworkCore.IEntityTypeConfiguration{SkiNet.WebAPI.Core.Models.Product}" />
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
         /// <summary>

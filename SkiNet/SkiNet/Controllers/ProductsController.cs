@@ -26,21 +26,40 @@ namespace SkiNet.WebAPI.Controllers
     [Route("api/[controller]")]
     public class ProductsController : BaseApiController
     {
+        /// <summary>
+        /// The product type repo
+        /// </summary>
         private readonly IGenericRepository<ProductType> productTypeRepo;
+
+        /// <summary>
+        /// The product brand repo
+        /// </summary>
         private readonly IGenericRepository<ProductBrand> productBrandRepo;
+
+        /// <summary>
+        /// The product repo
+        /// </summary>
         private readonly IGenericRepository<Product> productRepo;
+
+        /// <summary>
+        /// The mapper
+        /// </summary>
         private readonly IMapper mapper;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductsController" /> class.
         /// </summary>
-        /// <param name="context">The context.</param>
-        public ProductsController(IGenericRepository<Product> productsRepo,
+        /// <param name="productsRepo">The products repo.</param>
+        /// <param name="productBrandRepo">The product brand repo.</param>
+        /// <param name="productTypeRepo">The product type repo.</param>
+        /// <param name="mapper">The mapper.</param>
+        public ProductsController(
+            IGenericRepository<Product> productsRepo,
             IGenericRepository<ProductBrand> productBrandRepo,
-            IGenericRepository<ProductType> productyTypeRepo,
+            IGenericRepository<ProductType> productTypeRepo,
             IMapper mapper)
         {
-            this.productTypeRepo = productyTypeRepo;
+            this.productTypeRepo = productTypeRepo;
             this.productRepo = productsRepo;
             this.productBrandRepo = productBrandRepo;
             this.mapper = mapper;
@@ -63,10 +82,12 @@ namespace SkiNet.WebAPI.Controllers
         /// Gets the product.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>Returns a single product.</returns>
+        /// <returns>
+        /// Returns a single product.
+        /// </returns>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ApiResponse),StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetProduct(int id)
         {
             var spec = new ProductsWithTypesAndBrandsSpecification(id);
@@ -76,9 +97,14 @@ namespace SkiNet.WebAPI.Controllers
             {
                 return this.NotFound(new ApiResponse(404));
             }
+
             return this.Ok(this.mapper.Map<Product, ProductToReturnDto>(product));
         }
 
+        /// <summary>
+        /// Gets the brands.
+        /// </summary>
+        /// <returns><see cref="IActionResult"/> list of brands.</returns>
         [HttpGet("brands")]
         public async Task<IActionResult> GetBrands()
         {
@@ -87,6 +113,10 @@ namespace SkiNet.WebAPI.Controllers
             return this.Ok();
         }
 
+        /// <summary>
+        /// Gets the product types.
+        /// </summary>
+        /// <returns><see cref="IActionResult"/> list of product brands.</returns>
         [HttpGet("types")]
         public async Task<IActionResult> GetProductTypes()
         {
