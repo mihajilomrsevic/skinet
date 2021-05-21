@@ -1,2 +1,0 @@
-# skinet
-Online store

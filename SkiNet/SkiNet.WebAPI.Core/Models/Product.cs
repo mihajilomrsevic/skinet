@@ -10,7 +10,6 @@ namespace SkiNet.WebAPI.Core.Models
     /// </summary>
     public class Product : BaseEntity
     {
-
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
@@ -43,12 +42,36 @@ namespace SkiNet.WebAPI.Core.Models
         /// </value>
         public string PictureUrl { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the product.
+        /// </summary>
+        /// <value>
+        /// The type of the product.
+        /// </value>
         public ProductType ProductType { get; set; }
 
+        /// <summary>
+        /// Gets or sets the product type identifier.
+        /// </summary>
+        /// <value>
+        /// The product type identifier.
+        /// </value>
         public int ProductTypeId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the product brand.
+        /// </summary>
+        /// <value>
+        /// The product brand.
+        /// </value>
         public ProductBrand ProductBrand { get; set; }
 
+        /// <summary>
+        /// Gets or sets the product brand identifier.
+        /// </summary>
+        /// <value>
+        /// The product brand identifier.
+        /// </value>
         public int ProductBrandId { get; set; }
     }
 }

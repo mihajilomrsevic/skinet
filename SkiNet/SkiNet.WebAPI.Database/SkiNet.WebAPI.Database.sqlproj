@@ -6,7 +6,7 @@
     <Name>SkiNet.WebAPI.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{1d8b4e30-736e-4f03-ac6a-410dd6e5a32b}</ProjectGuid>
+    <ProjectGuid>{b442b883-44c7-4a44-8a46-895f8c62babd}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
