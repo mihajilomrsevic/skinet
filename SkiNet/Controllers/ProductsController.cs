@@ -120,7 +120,7 @@ namespace SkiNet.WebAPI.Controllers
         {
             var brands = await this.productBrandRepo.ListAllAsync();
 
-            return this.Ok();
+            return this.Ok(brands);
         }
 
         /// <summary>
