@@ -6,18 +6,15 @@
 namespace SkiNet.WebAPI.Controllers
 {
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using AutoMapper;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.EntityFrameworkCore;
     using SkiNet.WebAPI.Core.Models;
     using SkiNet.WebAPI.Core.Repositories;
     using SkiNet.WebAPI.Core.Specifications;
     using SkiNet.WebAPI.Errors;
     using SkiNet.WebAPI.Helpers;
-    using SkiNet.WebAPI.Infrastructure.Data;
 
     /// <summary>
     /// ProductsController class.

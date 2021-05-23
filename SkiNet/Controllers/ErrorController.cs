@@ -14,6 +14,7 @@ namespace SkiNet.WebAPI.Controllers
     /// </summary>
     /// <seealso cref="SkiNet.WebAPI.Controllers.BaseApiController" />
     [Route("errors/{code}")]
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class ErrorController : BaseApiController
     {
         /// <summary>

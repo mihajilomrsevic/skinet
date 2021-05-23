@@ -1,10 +1,6 @@
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\bin\Debug\SkiNet.WebAPI.Database.dacpac
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\bin\Debug\SkiNet.WebAPI.Database.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\bin\Debug\SkiNet.WebAPI.Database.pdb
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.sqlprojAssemblyReference.cache
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\Model.xml
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\refactor.xml
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\postdeploy.sql
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\predeploy.sql
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.pdb
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.sqlprojAssemblyReference.cache

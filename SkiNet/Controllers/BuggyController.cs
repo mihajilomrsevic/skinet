@@ -4,9 +4,9 @@
 // </copyright>
 namespace SkiNet.WebAPI.Controllers
 {
+    using Infrastructure.Data;
     using Microsoft.AspNetCore.Mvc;
     using SkiNet.WebAPI.Errors;
-    using SkiNet.WebAPI.Infrastructure.Data;
 
     /// <summary>
     /// Controller made for testing purposes.

@@ -8,6 +8,7 @@ namespace SkiNet.WebAPI.Infrastructure.Repositories
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using global::Infrastructure.Data;
     using Microsoft.EntityFrameworkCore;
     using SkiNet.WebAPI.Core.Models;
     using SkiNet.WebAPI.Core.Repositories;

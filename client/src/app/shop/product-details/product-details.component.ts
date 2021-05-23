@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {IProduct} from '../../shared/models/product';
 import {ShopService} from '../shop.service';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.scss']
+  styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
   product: IProduct;
@@ -17,12 +17,12 @@ export class ProductDetailsComponent implements OnInit {
     this.loadProduct();
   }
 
-  loadProduct(){
-    this.shopService.getProduct(+ this.activatedRoute.snapshot.paramMap.get('id')).subscribe(product => {
+  loadProduct() {
+    this.shopService.getProduct(+ this.activatedRoute.snapshot.paramMap.get('id')).subscribe((product) => {
       this.product = product;
-    }, error => {
+    }, (error) => {
       console.log(error);
-    } );
+    });
   }
 
 }
