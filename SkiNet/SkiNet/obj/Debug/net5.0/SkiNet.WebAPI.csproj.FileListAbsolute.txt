@@ -1,3 +1,10 @@
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.csprojAssemblyReference.cache
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.AssemblyInfo.cs
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\appsettings.json
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\SkiNet.WebAPI.exe
@@ -49,13 +56,6 @@ C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\SkiNet.WebAPI.Core.d
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\SkiNet.WebAPI.Infrastructure.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\SkiNet.WebAPI.Infrastructure.pdb
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\bin\Debug\net5.0\SkiNet.WebAPI.Core.pdb
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.csprojAssemblyReference.cache
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.AssemblyInfoInputs.cache
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.AssemblyInfo.cs
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\SkiNet.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\staticwebassets\SkiNet.WebAPI.StaticWebAssets.Manifest.cache
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\staticwebassets\SkiNet.WebAPI.StaticWebAssets.xml
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet\obj\Debug\net5.0\scopedcss\bundle\SkiNet.WebAPI.styles.css
