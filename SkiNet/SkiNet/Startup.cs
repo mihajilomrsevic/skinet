@@ -15,6 +15,7 @@ namespace SkiNet
     using SkiNet.WebAPI.Helpers;
     using SkiNet.WebAPI.Infrastructure.Data;
     using SkiNet.WebAPI.Middleware;
+    using StackExchange.Redis;
 
     /// <summary>
     /// Startup class.
@@ -47,6 +48,13 @@ namespace SkiNet
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(this.Configuration.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
