@@ -14,7 +14,9 @@ namespace SkiNet
     using SkiNet.WebAPI.Extensions;
     using SkiNet.WebAPI.Helpers;
     using SkiNet.WebAPI.Infrastructure.Data;
+    using SkiNet.WebAPI.Infrastructure.Identity;
     using SkiNet.WebAPI.Middleware;
+    using StackExchange.Redis;
 
     /// <summary>
     /// Startup class.
@@ -47,7 +49,20 @@ namespace SkiNet
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<AppIdentityDbContext>(x =>
+            {
+                x.UseSqlServer(this.Configuration.GetConnectionString("IdentityConnection"));
+            });
+
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(this.Configuration.GetConnectionString("Redis"), true);
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
             services.AddApplicationServices();
+            services.AddIdentityServices(this.Configuration);
             services.AddSwaggerDocumentation();
             services.AddCors(opt =>
             {
@@ -82,6 +97,7 @@ namespace SkiNet
 
             app.UseCors("CorsPolicy");
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UserSwaggerDocumentation();

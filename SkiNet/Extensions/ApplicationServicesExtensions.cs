@@ -9,8 +9,10 @@ namespace SkiNet.WebAPI.Extensions
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.DependencyInjection;
     using SkiNet.WebAPI.Core.Repositories;
+    using SkiNet.WebAPI.Core.Services;
     using SkiNet.WebAPI.Errors;
     using SkiNet.WebAPI.Infrastructure.Repositories;
+    using SkiNet.WebAPI.Infrastructure.Services;
 
     /// <summary>
     /// Extension class for injecting standard services.
@@ -24,7 +26,9 @@ namespace SkiNet.WebAPI.Extensions
         /// <returns><see cref="IServiceCollection"/> </returns>
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.Configure<ApiBehaviorOptions>(options =>
             {

@@ -9,11 +9,14 @@ namespace SkiNet
     using System.Threading.Tasks;
     using Infrastructure.Data;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
+    using SkiNet.WebAPI.Core.Models.Identity;
     using SkiNet.WebAPI.Infrastructure.Data;
+    using SkiNet.WebAPI.Infrastructure.Identity;
 
     /// <summary>
     /// Program class.
@@ -36,6 +39,11 @@ namespace SkiNet
                 var context = servicess.GetRequiredService<StoreContext>();
                 await context.Database.MigrateAsync();
                 await StoreContextSeed.SeedAsync(context, loggerFactory);
+
+                var userManager = servicess.GetRequiredService<UserManager<AppUser>>();
+                var identityContext = servicess.GetRequiredService<AppIdentityDbContext>();
+                await identityContext.Database.MigrateAsync();
+                await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
             }
             catch (Exception ex)
             {

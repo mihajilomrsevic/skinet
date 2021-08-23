@@ -6,7 +6,6 @@ C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\bin\Debug\net5.
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\bin\Debug\net5.0\SkiNet.WebAPI.Infrastructure.pdb
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\bin\Debug\net5.0\SkiNet.WebAPI.Core.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\bin\Debug\net5.0\SkiNet.WebAPI.Core.pdb
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.csprojAssemblyReference.cache
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.AssemblyInfo.cs
@@ -16,3 +15,4 @@ C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\ref\SkiNet.WebAPI.Infrastructure.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.pdb
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.genruntimeconfig.cache
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Infrastructure\obj\Debug\net5.0\SkiNet.WebAPI.Infrastructure.csproj.AssemblyReference.cache

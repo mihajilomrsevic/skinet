@@ -5,6 +5,7 @@
 namespace SkiNet.WebAPI.Controllers
 {
     using Infrastructure.Data;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using SkiNet.WebAPI.Errors;
 
@@ -27,6 +28,13 @@ namespace SkiNet.WebAPI.Controllers
         {
             this.context = context;
         }
+        [HttpGet("testauth")]
+        [Authorize]
+        public IActionResult GetSecretText()
+        {
+            return this.Ok("Secret stuff");
+        }
+
 
         /// <summary>
         /// Gets the not found request.

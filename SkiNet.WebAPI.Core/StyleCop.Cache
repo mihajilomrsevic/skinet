@@ -92,29 +92,6 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <sourcecode name="ProductsWithTypesAndBrandsSpecification.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2021-02-21 19:55:01.328</styleCop>
-      <settingsFile>2021-02-21 19:55:01.295</settingsFile>
-      <sourceFile>2021-05-06 13:49:33.042</sourceFile>
-      <parser>2021-02-21 19:55:01.328</parser>
-      <StyleCop.CSharp.DocumentationRules>2021-02-21 19:55:01.328</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>273321098</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2021-02-21 19:55:01.328</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2021-02-21 19:55:01.328</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2021-02-21 19:55:01.328</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2021-02-21 19:55:01.328</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2021-02-21 19:55:01.328</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2021-02-21 19:55:01.328</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
   <sourcecode name="IProductRepository.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2021-02-21 19:55:01.328</styleCop>
@@ -213,10 +190,6 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <project key="-116609447">
-    <configuration>
-    </configuration>
-  </project>
   <sourcecode name="ProductToReturnDto.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2021-02-21 19:55:01.328</styleCop>
@@ -240,4 +213,70 @@
     </timestamps>
     <violations />
   </sourcecode>
+  <sourcecode name="ProductsWithTypesAndBrandsSpecification.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2021-05-16 11:41:30.261</styleCop>
+      <settingsFile>2021-05-16 11:41:30.238</settingsFile>
+      <sourceFile>2021-05-08 12:05:58.422</sourceFile>
+      <parser>2021-05-16 11:41:30.261</parser>
+      <StyleCop.CSharp.DocumentationRules>2021-05-16 11:41:30.261</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-740357625</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2021-05-16 11:41:30.261</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2021-05-16 11:41:30.261</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2021-05-16 11:41:30.261</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2021-05-16 11:41:30.261</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2021-05-16 11:41:30.261</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2021-05-16 11:41:30.261</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.DocumentationRules" rule="ElementParametersMustBeDocumented" ruleCheckId="SA1611">
+        <context>The documentation header must contain param tags matching the element's parameter list.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to AddOrderBy must begin with the 'this.', 'base.', 'object.' or 'ProductsWithTypesAndBrandsSpecification.' or 'BaseSpecification&lt;Product&gt;.' prefix to indicate the intended method call. </context>
+        <line>34</line>
+        <index>1712</index>
+        <endIndex>1721</endIndex>
+        <startLine>34</startLine>
+        <startColumn>25</startColumn>
+        <endLine>34</endLine>
+        <endColumn>34</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to AddOrderByDescending must begin with the 'this.', 'base.', 'object.' or 'ProductsWithTypesAndBrandsSpecification.' or 'BaseSpecification&lt;Product&gt;.' prefix to indicate the intended method call. </context>
+        <line>37</line>
+        <index>1834</index>
+        <endIndex>1853</endIndex>
+        <startLine>37</startLine>
+        <startColumn>25</startColumn>
+        <endLine>37</endLine>
+        <endColumn>44</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixCallsCorrectly" ruleCheckId="SA1126">
+        <context>The call to AddOrderBy must begin with the 'this.', 'base.', 'object.' or 'ProductsWithTypesAndBrandsSpecification.' or 'BaseSpecification&lt;Product&gt;.' prefix to indicate the intended method call. </context>
+        <line>40</line>
+        <index>1957</index>
+        <endIndex>1966</endIndex>
+        <startLine>40</startLine>
+        <startColumn>25</startColumn>
+        <endLine>40</endLine>
+        <endColumn>34</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <project key="-116609447">
+    <configuration>
+    </configuration>
+  </project>
 </stylecopresultscache>

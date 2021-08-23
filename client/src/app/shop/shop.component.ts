@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {IBrand} from '../shared/models/brand';
 import {IProduct} from '../shared/models/product';
 import {IType} from '../shared/models/productType';
@@ -39,7 +39,7 @@ export class ShopComponent implements OnInit {
       this.totalCount = response.count;
     }, (error) => {
       console.log(error);
-    });
+    } );
   }
 
   getBrands() {

@@ -3,4 +3,3 @@ C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\bin\Debug\SkiNet.WebA
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\bin\Debug\SkiNet.WebAPI.Database.pdb
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.pdb
-C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Database\obj\Debug\SkiNet.WebAPI.Database.sqlprojAssemblyReference.cache
