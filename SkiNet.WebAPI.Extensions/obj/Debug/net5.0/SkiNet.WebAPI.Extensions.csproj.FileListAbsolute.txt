@@ -9,3 +9,4 @@ C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Extensions\obj\Debug\net5.0\Sk
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Extensions\obj\Debug\net5.0\SkiNet.WebAPI.Extensions.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Extensions\obj\Debug\net5.0\ref\SkiNet.WebAPI.Extensions.dll
 C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Extensions\obj\Debug\net5.0\SkiNet.WebAPI.Extensions.pdb
+C:\Users\User\Desktop\skinet\SkiNet\SkiNet.WebAPI.Extensions\obj\Debug\net5.0\SkiNet.WebAPI.Extensions.csproj.AssemblyReference.cache

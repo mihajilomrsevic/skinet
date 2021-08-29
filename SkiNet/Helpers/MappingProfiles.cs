@@ -6,6 +6,7 @@
 namespace SkiNet.WebAPI.Helpers
 {
     using AutoMapper;
+    using SkiNet.WebAPI.Core.Models;
     using SkiNet.WebAPI.Core.Models.Identity;
     using SkiNet.WebAPI.Models.DTOs;
 
@@ -26,6 +27,9 @@ namespace SkiNet.WebAPI.Helpers
                 .ForMember(dest => dest.PictureUrl, opt => opt.MapFrom<ProductUrlResolver>());
 
             this.CreateMap<Address, AddressDto>().ReverseMap();
+
+            this.CreateMap<CustomerBasketDto, CustomerBasket>();
+            this.CreateMap<BasketItemDto, BasketItem>();
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -37,8 +33,6 @@ namespace SkiNet.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCurrentUser()
         {
-            var email = HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
-
             var user = await this.userManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
 
             return this.Ok(new UserDto
@@ -50,15 +44,16 @@ namespace SkiNet.WebAPI.Controllers
         }
 
         [HttpGet("emailExists")]
-        public async Task<IActionResult> CheckEmailExistsAsync([FromQuery] string email)
+        public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
         {
             return this.Ok(await this.userManager.FindByEmailAsync(email) != null);
         }
 
+        [Authorize]
         [HttpGet("address")]
-        public async Task<IActionResult> GetUserAddress()
+        public async Task<ActionResult<bool>> GetUserAddress()
         {
-            var user = await this.userManager.FindByUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
+            var user = await this.userManager.FindByEmailFromClaimsPrinciple(HttpContext.User);
 
             return this.Ok(this.mapper.Map<Address, AddressDto>(user.Address));
         }
@@ -106,6 +101,14 @@ namespace SkiNet.WebAPI.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
+            if (CheckEmailExistsAsync(registerDto.Email).Result.Value)
+            {
+
+                return new BadRequestObjectResult(new ApiValidationErrorResponse
+                {
+                    Errors = new[] { "Email address is in use" }
+                });
+            }
             var user = new AppUser
             {
                 DisplayName = registerDto.DisplayName,
