@@ -49,3 +49,6 @@ testem.log
 Thumbs.db
 *.db
 *.rdb
+
+# Build files
+.pdb
