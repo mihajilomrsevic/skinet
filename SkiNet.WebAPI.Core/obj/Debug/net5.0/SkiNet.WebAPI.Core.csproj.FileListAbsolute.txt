@@ -14,7 +14,6 @@ C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\bin\Debug\net5.0\SkiN
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\bin\Debug\net5.0\SkiNet.WebAPI.Core.dll
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\bin\Debug\net5.0\ref\SkiNet.WebAPI.Core.dll
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\bin\Debug\net5.0\SkiNet.WebAPI.Core.pdb
-C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.csproj.AssemblyReference.cache
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.AssemblyInfoInputs.cache
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.AssemblyInfo.cs
@@ -22,3 +21,4 @@ C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiN
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.dll
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\ref\SkiNet.WebAPI.Core.dll
 C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.pdb
+C:\Users\Mihajilo\Desktop\skinet\SkiNet\SkiNet.WebAPI.Core\obj\Debug\net5.0\SkiNet.WebAPI.Core.csproj.AssemblyReference.cache

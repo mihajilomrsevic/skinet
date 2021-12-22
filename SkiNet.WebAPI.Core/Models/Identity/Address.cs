@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace SkiNet.WebAPI.Core.Models.Identity
 
         public string ZipCode { get; set; }
 
+        [Required]
         public string AppUserId { get; set; }
 
         public AppUser AppUser {get; set;}

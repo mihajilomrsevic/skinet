@@ -23,9 +23,12 @@ export class RegisterComponent implements OnInit {
   createRegisterForm() {
     this.registerForm = this.fb.group({
       displayName: [null, [Validators.required]],
-      email: [null, [Validators.required, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')],
-        [this.validateEmailNotTaken()]],
-        password: [null, [Validators.required]]
+      email: [null,
+        [Validators.required, Validators
+          .pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')],
+        [this.validateEmailNotTaken()]
+      ],
+      password: [null, Validators.required]
     });
   }
 
@@ -36,11 +39,9 @@ export class RegisterComponent implements OnInit {
       console.log(error);
       this.errors = error.errors;
     })
-    console.log(this.registerForm.value);
   }
 
   validateEmailNotTaken(): AsyncValidatorFn {
-
     return control => {
       return timer(500).pipe(
         switchMap(() => {
@@ -50,9 +51,11 @@ export class RegisterComponent implements OnInit {
           return this.accountService.checkEmailExists(control.value).pipe(
             map(res => {
               return res ? { emailExists: true } : null;
-            }))
+            })
+          );
         })
-      );
-    };
+      )
+    }
   }
+
 }

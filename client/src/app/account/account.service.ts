@@ -17,7 +17,7 @@ export class AccountService {
   constructor(private http: HttpClient, private router: Router) { }
 
   loadCurrentUser(token: string) {
-    if (token === null) {
+    if (token == null) {
       this.currentUserSource.next(null);
       return of(null);
     }
@@ -31,7 +31,8 @@ export class AccountService {
           localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
         }
-      }))
+      })
+    )
   }
 
   login(values: any) {
@@ -52,7 +53,8 @@ export class AccountService {
           localStorage.setItem('token', user.token);
           this.currentUserSource.next(user);
         }
-      }))
+      })
+    )
   }
 
   logout() {

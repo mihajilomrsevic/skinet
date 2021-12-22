@@ -18,7 +18,7 @@ namespace SkiNet.WebAPI.Core.Models
         /// <value>
         /// The identifier.
         /// </value>
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
     }
 }

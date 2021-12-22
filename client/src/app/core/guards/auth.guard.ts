@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AccountService } from '../../account/account.service';
+import { AccountService } from 'src/app/account/account.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +18,8 @@ export class AuthGuard implements CanActivate {
         if (auth) {
           return true;
         }
-        this.router.navigate(['account/login'], { queryParams: { returnUrl: state.url } });
+        this.router.navigate(['account/login'], { queryParams: { returnUrl: state.url } })
       })
-    );
+    )
   }
 }

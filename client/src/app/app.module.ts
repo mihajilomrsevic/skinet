@@ -7,14 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { LoadingInterceptors } from './core/interceptors/loading.interceptors';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptors';
 import { HomeModule } from './home/home.module';
-import { TestErrorComponent } from './test-error/test-error.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TestErrorComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -23,12 +22,12 @@ import { TestErrorComponent } from './test-error/test-error.component';
     HttpClientModule,
     CoreModule,
     HomeModule,
-    NgxSpinnerModule,
+    NgxSpinnerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptors, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

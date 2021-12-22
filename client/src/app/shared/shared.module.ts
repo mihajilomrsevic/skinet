@@ -10,18 +10,13 @@ import { PagingHeaderComponent } from './components/paging-header/paging-header.
 import { TextInputComponent } from './components/text-input/text-input.component';
 
 @NgModule({
-  declarations: [
-    PagingHeaderComponent,
-    PagerComponent,
-    OrderTotalsComponent,
-    TextInputComponent,
-  ],
+  declarations: [PagingHeaderComponent, PagerComponent, OrderTotalsComponent, TextInputComponent],
   imports: [
     CommonModule,
     PaginationModule.forRoot(),
     CarouselModule.forRoot(),
-    ReactiveFormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ReactiveFormsModule
   ],
   exports: [
     PaginationModule,
@@ -30,8 +25,8 @@ import { TextInputComponent } from './components/text-input/text-input.component
     CarouselModule,
     OrderTotalsComponent,
     ReactiveFormsModule,
-    TextInputComponent,
-    BsDropdownModule
-  ],
+    BsDropdownModule,
+    TextInputComponent
+  ]
 })
 export class SharedModule { }

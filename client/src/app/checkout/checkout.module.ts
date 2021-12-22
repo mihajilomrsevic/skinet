@@ -1,17 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CheckoutRoutingModule } from './checkout-routing.module';
 import { CheckoutComponent } from './checkout.component';
-import {CheckoutRoutingModule} from './checkout-routing.module';
-
-
 
 @NgModule({
-  declarations: [
-    CheckoutComponent,
-  ],
+  declarations: [CheckoutComponent],
   imports: [
     CommonModule,
-    CheckoutRoutingModule,
-  ],
+    CheckoutRoutingModule
+  ]
 })
 export class CheckoutModule { }
